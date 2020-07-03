@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  workspace:
+    platform: linux/x86_64
+    build: # use the Dockerfile in the current directory
+      context: .
+      dockerfile: Dockerfile
+    security_opt: # options needed for gdb debugging
+      - seccomp:unconfined
+      - apparmor:unconfined
+    container_name: workspace
+    ports:
+      - "5678:22" # SSH
+      - "7777:7777" # GDB Server
+    volumes:
+      - ${HOME}/Repos:/src/
