@@ -1,0 +1,11 @@
+1.打镜像
+  cmd_build:
+    docker build --platform linux/amd64 -t centos-cpp ./
+      platform 只能在命令中指定，不能是 Dockerfile
+
+2.启动镜像
+  cmd_run:
+      docker run -d -p 5566:22 -p 6677:7777 dev
+        有个端口映射，对外是用 5566 与 6677 访问。
+  或者
+    使用 docker desktop,需要在启动的时候，指定映射

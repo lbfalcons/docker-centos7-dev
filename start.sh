@@ -13,7 +13,7 @@ test -f /root/.ssh/authorized_keys || /usr/bin/cp /root/.ssh/id_rsa.pub /root/.s
 # Change the owner.
 chown -R root:root /root/.ssh
 
-# Show the private key.
+ # Show the private key.
 /usr/bin/cat /root/.ssh/id_rsa
 /usr/bin/echo ""
 /usr/bin/echo "Please save the printed private RSA key and login using:"
